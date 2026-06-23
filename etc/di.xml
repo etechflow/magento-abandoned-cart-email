@@ -79,4 +79,27 @@
         </arguments>
     </type>
 
+    <!--
+       UI Component grid data sources MUST be registered in GLOBAL etc/di.xml,
+       never in etc/adminhtml/di.xml. The `collections` array on CollectionFactory
+       is compiled per-scope: declaring it in the adminhtml scope makes Magento
+       REPLACE the merged array (wiping the ~88 core registrations such as
+       sales_order_grid_data_source, customer_listing_data_source, etc.) instead
+       of merging additively. Keeping it global lets it merge with core + all
+       other modules so every admin grid keeps working.
+       Rule of thumb: grid data-source registrations belong in global di.xml.
+    -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="etechflow_abandonedcart_cart_listing_data_source"
+                      xsi:type="string">Etechflow\AbandonedCart\Model\ResourceModel\AbandonedCart\Grid\Collection</item>
+                <item name="etechflow_abandonedcart_rule_listing_data_source"
+                      xsi:type="string">Etechflow\AbandonedCart\Model\ResourceModel\Rule\Grid\Collection</item>
+                <item name="etechflow_abandonedcart_popup_rule_listing_data_source"
+                      xsi:type="string">Etechflow\AbandonedCart\Model\ResourceModel\PopupRule\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
 </config>
