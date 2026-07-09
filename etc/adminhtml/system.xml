@@ -261,39 +261,6 @@
                 </field>
             </group>
 
-<group id="plans" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="0">
-                <label>Subscription Plan Prices</label>
-
-                <field id="weekly_price" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Weekly Plan Price</label>
-                    <validate>validate-zero-or-greater</validate>
-                    <comment>Amount in your selected currency (e.g., 9 for $9/week).</comment>
-                </field>
-
-                <field id="weekly_label" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Weekly Plan Label</label>
-                </field>
-
-                <field id="monthly_price" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Monthly Plan Price</label>
-                    <validate>validate-zero-or-greater</validate>
-                    <comment>Amount in your selected currency (e.g., 29 for $29/month).</comment>
-                </field>
-
-                <field id="monthly_label" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Monthly Plan Label</label>
-                </field>
-
-                <field id="yearly_price" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Yearly Plan Price</label>
-                    <validate>validate-zero-or-greater</validate>
-                    <comment>Amount in your selected currency (e.g., 290 for $290/year — save vs monthly).</comment>
-                </field>
-
-                <field id="yearly_label" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Yearly Plan Label</label>
-                </field>
-            </group>
 
         </section>
     </system>
